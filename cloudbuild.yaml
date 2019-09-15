@@ -1,3 +1,10 @@
 steps:
-  - name: gcr.io/cloud-builders/gsutil
-    args: ["-m", "rsync", "-x", ".git", "-r", "-c", "-d", "./", "gs://www.pferreiraseguros.com"]
+  - name: 'gcr.io/cloud-builders/npm'
+    args: [ 'install' ]
+  - name: 'gcr.io/pferreiraseguros-com/firebase'
+    args: [ 'deploy', '-P', 'pferreiraseguros-com']
+    secretEnv: ['PASSWORD']
+secrets:
+  - kmsKeyName: projects/pferreiraseguros-com/locations/us/keyRings/cloudbuild/cryptoKeys/firebase
+    secretEnv:
+      PASSWORD: CiQAvDT4fkTkPh6dTd+MCBP3nFu3asDBU/ggjE82eEqNJXeANcsSWRJXCgzDafVZfYf0lLim8xESNRJ6g5dHIx1fVqRHRpr5IiZNJMebdL6l1xNx4eMsLvVRtwRXchmXosNOho5QJcrYYgXeTnC1GhDWg7SBhVPFXTFg6Nm5MJCc
