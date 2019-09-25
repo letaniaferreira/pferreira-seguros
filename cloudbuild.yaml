@@ -3,8 +3,8 @@ steps:
     args: [ 'install' ]
   - name: 'gcr.io/pferreiraseguros-com/firebase'
     args: [ 'deploy', '-P', 'pferreiraseguros-com']
-    secretEnv: ['PASSWORD']
+    secretEnv: ['FIREBASE_TOKEN']
 secrets:
   - kmsKeyName: projects/pferreiraseguros-com/locations/us/keyRings/cloudbuild/cryptoKeys/firebase
     secretEnv:
-      PASSWORD: CiQAvDT4fkTkPh6dTd+MCBP3nFu3asDBU/ggjE82eEqNJXeANcsSWRJXCgzDafVZfYf0lLim8xESNRJ6g5dHIx1fVqRHRpr5IiZNJMebdL6l1xNx4eMsLvVRtwRXchmXosNOho5QJcrYYgXeTnC1GhDWg7SBhVPFXTFg6Nm5MJCc
+      FIREBASE_TOKEN: CiQAvDT4fkTkPh6dTd+MCBP3nFu3asDBU/ggjE82eEqNJXeANcsSWRJXCgzDafVZfYf0lLim8xESNRJ6g5dHIx1fVqRHRpr5IiZNJMebdL6l1xNx4eMsLvVRtwRXchmXosNOho5QJcrYYgXeTnC1GhDWg7SBhVPFXTFg6Nm5MJCc
